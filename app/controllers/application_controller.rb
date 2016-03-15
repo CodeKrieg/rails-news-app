@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def admin_authorized
-    redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
+    if !current_user.admin?
+      redirect_to root_path, alert: 'Access Denied'
+    end
   end
+  
 end

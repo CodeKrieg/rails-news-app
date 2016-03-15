@@ -1,0 +1,20 @@
+<% @ads.each do |ad| %>
+ <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="Ad-title">
+          <%= link_to ad.title, ad_path(ad) %>
+        </div>
+        <div class="ad-url">
+          <%= ad.url.html_safe %>
+        </div>
+      <% if admin_signed_in? %>
+          <div class="ad-actions">
+            <%= link_to "Edit this ad", edit_ad_path(ad), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Delete this ad", ad_path(ad), method: :delete, 
+                                          data: { confirm: "Are you sure you want to delete the ad?"}, 
+                                          class: "btn btn-xs btn-danger" %>  
+          </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>    

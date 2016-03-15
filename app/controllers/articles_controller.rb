@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
+  before_filter :authenticate_admin!, except: [:index, :show]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!, except: [:index, :show]
   
   def index
     @article = Article.all.order("created_at desc")
@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
   end
   
   def update
-    if @article.update(post_params)
+    if @article.update(article_params)
       redirect_to @article, notice: "This article was successfully updated"
     else
       render 'edit'
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
   
   def find_article

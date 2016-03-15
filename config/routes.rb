@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   
   # Add resources bellow
   resources :articles
+  resources :categories
+  resources :ads
   
 end
