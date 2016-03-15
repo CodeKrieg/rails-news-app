@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-lg-12 col-md-8 col-sm-6">
+    <% @article.each do |article| %>
+    <h2>
+      <%= link_to article.title, article, class: "posts-title"%> 
+    </h2>
+    <p><span class="fa fa-clock-o"></span> <%= article.created_at.strftime('%A, %B, %d') %></p>
+    <p><%= article.description  %></p>
+    <hr>
+  <% end %>
+  </div>
+</div>
