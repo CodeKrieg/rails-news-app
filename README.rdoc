@@ -2,38 +2,37 @@
 
 == ADMIN Features
 
-	Should be able to: 
-		* 1. add users(authors to be exact), Remove Users, (Assign Roles - we can keep it for later on)
-		* 2. CRUD for News (that is article) 
-		* 3. CRUD for Advertisements
-		* 4. CRUD for Categories 
-		* 5. CRUD for team
-		* 6. CRUD for Social activties
+Should be able to: 
+* 1. add users(authors to be exact), Remove Users, (Assign Roles - we can keep it for later on)
+* 2. CRUD for News (that is article) 
+* 3. CRUD for Advertisements
+* 4. CRUD for Categories 
+* 5. CRUD for team
+* 6. CRUD for Social activties
 
 == AUTHOR Features
 
-	should be able to: 
-		* 1. CRUD News
+should be able to: 
+* 1. CRUD News
 
 == NEWS Features
 
-	should have: 
-		* 1. News will have images, categories, videos(if user wants but option shall be there)
-		* 2. Title, Featured Image, News content
-		* 3. Shareable plugin (I will use a javascript thing to share on different social networks even whatsapp :P)
+should have: 
+* 1. News will have images, categories, videos(if user wants but option shall be there)
+* 2. Title, Featured Image, News content
+* 3. Shareable plugin (I will use a javascript thing to share on different social networks even whatsapp :P)
 
 == VIDEOS Features
 
-	simply video box with title
-		* 1. however we have to give 3 sections, National News(big video on main page), 2. State News (side bar small video), 3. City News(below the state news)
+simply video box with title
+* 1. however we have to give 3 sections, National News(big video on main page), 2. State News (side bar small video), 3. City News(below the state news)
 
 == ADVERTISEMENT Features
 
-	Ads can be: 
-		* 1. videos or image files only small(as on his website)
-
+Ads can be: 
+	* 1. videos or image files only small(as on his website)
 
 == Last will be : 
 
- He needs an image gallery. (need it to be added to administration panel)
+He needs an image gallery. (need it to be added to administration panel)
 	
