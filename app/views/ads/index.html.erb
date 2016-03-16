@@ -5,8 +5,9 @@
           <%= link_to ad.title, ad_path(ad) %>
         </div>
         <div class="ad-url">
-          <%= ad.url.html_safe %>
+          <%=link_to ad.url.html_safe %>
         </div>
+        <div class="ck-time badge"><%= ad.created_at.strftime("%A, %dth-%b-%Y, %H:%M %P, %Z ") %></div>
       <% if admin_signed_in? %>
           <div class="ad-actions">
             <%= link_to "Edit this ad", edit_ad_path(ad), class: "btn btn-xs btn-primary" %>

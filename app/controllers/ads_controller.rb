@@ -15,7 +15,7 @@ class AdsController < ApplicationController
     @ad = Ad.new(ads_params)
     if @ad.save
       flash[:success] = "Ad Created and Added successfully"
-      redirect_to root_path
+      redirect_to @ad
     end
   end
   
