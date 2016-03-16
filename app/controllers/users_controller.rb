@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :admin_authorized, except [:index, :show]
+  before_filter :authenticate_admin!, except: [:index, :show]
   
   def create
     #
@@ -11,5 +11,6 @@ class UsersController < ApplicationController
       redirect_to root_path
     else 
       flash[:danger] = "Something went wrong"
+    end
   end
 end
