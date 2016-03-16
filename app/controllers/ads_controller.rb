@@ -20,8 +20,9 @@ class AdsController < ApplicationController
   end
   
   def show
-    
+ 
   end
+
   
   def edit
   end
@@ -42,7 +43,7 @@ class AdsController < ApplicationController
   private
   
     def ads_params
-      params.require(:ad).permit(:title, :url)
+      params.require(:ad).permit(:title, :url, :html)
     end
     
     def find_ad

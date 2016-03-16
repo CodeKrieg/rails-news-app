@@ -13,4 +13,6 @@ class UsersController < ApplicationController
       flash[:danger] = "Something went wrong"
     end
   end
+  
+  
 end

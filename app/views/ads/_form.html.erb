@@ -17,6 +17,15 @@
           <%= f.text_field :url, placeholder: "Your URL" %>
         </div>
       </div>
+       <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :html %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.text_area :html, rows:10,  placeholder: "html code from google ads etc" %>
+        </div>
+      </div>
+      
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <%= f.submit "Create Advertisement", class: 'btn btn-primary btn-lg' %>

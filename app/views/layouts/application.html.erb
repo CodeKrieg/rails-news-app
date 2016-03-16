@@ -37,46 +37,33 @@
     <![endif]-->
   </head>
   <body>
-
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to "NewsApp", root_path, class: "navbar-brand" %>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-            <% if current_user || admin_signed_in? %>
-              <%= link_to "logout", destroy_user_session_path, method: :delete, :class => "btn btn-danger btn-md ck-button" %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    
+    <% if current_page?('/admin-panel') || current_page?('/list-users') || current_page?('/articles/new') || current_page?('/ads/new')%>
+      <%= render 'layouts/admin_nav' %>
+    <% else %>
+      <%= render 'layouts/nav' %>
+    <% end %>
+    
     <div class="container">
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+        
+        <!--<div class="col-lg-3">-->
+        <!--  <div class="well sidebar-nav">-->
+        <!--    <h3>Sidebar</h3>-->
+        <!--    <ul class="nav nav-list">-->
+        <!--      <li class="nav-header">Sidebar</li>-->
+        <!--      <li><%= link_to "Link1", "/path1"  %></li>-->
+        <!--      <li><%= link_to "Link2", "/path2"  %></li>-->
+        <!--      <li><%= link_to "Link3", "/path3"  %></li>-->
+        <!--    </ul>-->
+        <!--  </div>-->
+        <!--</div>-->
+        
+      </div>
 
       <footer>
         <p>&copy; Company 2016</p>

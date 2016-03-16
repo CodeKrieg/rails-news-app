@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root "welcome#index"
   
   # Add web pages bellow
-  get 'admin-panel', to: "pages#admin_panel"
+  get 'admin-panel', to: "admin_panel#index"
+  get 'list-users', to: "admin_panel#list_users"
+  get 'add-article', to: "admin_panel#add_article"
   
   # Add resources bellow
   resources :articles

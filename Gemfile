@@ -11,8 +11,11 @@ gem 'sass-rails', '~> 5.0'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
-# Devise
+# Authentication
 gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'cancancan'
+gem 'rolify'
+
 
 # Paperclip
 gem 'paperclip', '~> 4.3', '>= 4.3.5'

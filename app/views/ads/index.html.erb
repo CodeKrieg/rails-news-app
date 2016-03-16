@@ -7,7 +7,11 @@
         <div class="ad-url">
           <%=link_to ad.url.html_safe %>
         </div>
+        <div class="ad-html">
+          <%=raw ad.html %>
+        </div>
         <div class="ck-time badge"><%= ad.created_at.strftime("%A, %dth-%b-%Y, %H:%M %P, %Z ") %></div>
+        
       <% if admin_signed_in? %>
           <div class="ad-actions">
             <%= link_to "Edit this ad", edit_ad_path(ad), class: "btn btn-xs btn-primary" %>
