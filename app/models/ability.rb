@@ -10,7 +10,7 @@ class Ability
        else if user.role.author?
          can :manage, articles
        else
-          can :read, :all
+          can :read, articles
        end
        
     #

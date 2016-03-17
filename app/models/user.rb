@@ -9,5 +9,6 @@ class User < ActiveRecord::Base
   
   before_save { self.email = email.downcase }
   has_many :articles
+  ROLES = %w[admin author].freeze
   
 end
