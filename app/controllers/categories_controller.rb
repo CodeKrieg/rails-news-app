@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
-  before_filter :authenticate_admin!, except: [:show]
-  
+
   def index
     @category = Category.all
   end

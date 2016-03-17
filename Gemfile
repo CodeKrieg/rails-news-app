@@ -12,9 +12,8 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 
 # Authentication
-gem 'devise', '~> 3.5', '>= 3.5.6'
+gem 'bcrypt', '~> 3.1.7'
 gem 'cancancan'
-gem 'rolify'
 
 
 # Paperclip
