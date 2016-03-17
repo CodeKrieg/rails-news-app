@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :users
   
   # Root path
   root "welcome#index"
@@ -11,9 +9,16 @@ Rails.application.routes.draw do
   get 'add-article', to: "admin_panel#add_article"
   
   # Add resources bellow
+  resources :users
   resources :articles
   resources :categories
   resources :ads
+  
+  get 'signup', to: 'users#new'
+  
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
   # get 'login', to: "users#sign_in"
   # get 'signup', to: "users#sign_up"

@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_admin!, except: [:index, :show]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
   
   def index

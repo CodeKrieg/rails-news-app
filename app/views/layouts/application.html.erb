@@ -38,7 +38,7 @@
   </head>
   <body>
     
-    <% if current_page?('/admin-panel') || current_page?('/list-users') || current_page?('/articles/new') || current_page?('/ads/new')%>
+    <% if current_page?('/admin-panel') || current_page?('/list-users') %>
       <%= render 'layouts/admin_nav' %>
     <% else %>
       <%= render 'layouts/nav' %>

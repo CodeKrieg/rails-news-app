@@ -1,5 +1,4 @@
 class AdsController < ApplicationController
-  before_filter :authenticate_admin!, except: [:show]
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
   
 
