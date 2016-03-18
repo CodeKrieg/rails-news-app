@@ -1,25 +1,38 @@
 <% obj.each do |article| %>
+<div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div class="article-title">
-          <%= link_to article.title, article_path(article) %>
-        </div>
-        <div class="article-body">
-          <%= truncate(article.description, length: 100) %>
-        </div>
-        <% if article.categories.any? %>
-          <p>Categories: <%= render article.categories %></p>
+   
+   <div class="col-xs-4">
+    <h4 align="center"><%= article.title %></h4>
+    <hr>
+    <%= image_tag article.featured.url(:medium), class: "img-responsive" %>
+    <p><%= truncate(article.description, length: 100) %></p>
+    <%= link_to "Read More", article_path(article) %>
+    <% if article.categories.any? %>
+          <p>Categories: <%= render article.categories  %></p>
         <% end %>
-        <% if admin_signed_in? %>
-          <div class="article-actions">
-            <%= link_to "Edit this article", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-            <%= link_to "Delete this article", article_path(article), method: :delete, 
-                                          data: { confirm: "Are you sure you want to delete the article?"}, 
-                                          class: "btn btn-xs btn-danger" %>  
-          </div>
-        <% end %>
-      </div>
-    </div>
+   </div>
+   
+<!--   <div class="col-xs-4">-->
+<!--    <h3 align="center">A slighter longer title</h3>-->
+<!--    <hr>-->
+<!--    <img class="img-responsive" src="http://placehold.it/700x400" alt="">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, -->
+<!--    impedit, sit asperiores blanditiis quae molestias quaerat at cumque alias -->
+<!--    suscipit quidem quia voluptas aut quisquam veritatis nesciunt voluptatum itaque quibusdam!</p>-->
+<!--    <a href="#">Read more</a>-->
+<!--   </div>-->
+   
+<!--   <div class="col-xs-4">-->
+<!--    <h3 align="center">This is a very long title</h3>-->
+<!--    <hr>-->
+<!--    <img class="img-responsive" src="http://placehold.it/700x400" alt="">-->
+<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, -->
+<!--    impedit, sit asperiores blanditiis quae molestias quaerat at cumque alias -->
+<!--    suscipit quidem quia voluptas aut quisquam veritatis nesciunt voluptatum itaque quibusdam!</p>-->
+<!--    <a href="#">Read more</a>-->
+<!--   </div>-->
+  
   </div>
+</div>
 <% end %>

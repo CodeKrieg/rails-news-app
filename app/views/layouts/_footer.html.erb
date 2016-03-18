@@ -1,0 +1,54 @@
+<footer class="big-footer">
+  <div class="container sub-footer">
+    <div class="row">
+      <div class="col-xs-3">
+        <h4 class="footer-section-titles">
+          Top News
+        </h4>
+        <li class="list-unstyled">
+          <!--here we will loop through latest news descending (links only)-->
+          <%# @articles.each do |article| %>
+            <%#= link_to article.title %>
+          <%# end %>
+        </li>
+      </div>
+      <div class="col-xs-3">
+        <h4 class="footer-section-titles">
+          <!--cultural activities-->
+          Cultural activities
+        </h4>
+        <li class="list-unstyled">
+          
+        </li>
+      </div>
+      <div class="col-xs-3">
+        <h4 class="footer-section-titles">
+          Advertisements
+        </h4>
+        <li class="list-unstyled">
+          
+        </li>
+      </div>
+      <div class="col-xs-3">
+        <h4 class="footer-section-titles">
+          Connect With Us
+        </h4>
+        <li class="list-unstyled">
+          <i class="fa fa-twitter"></i>
+        </li>
+        <li class="list-unstyled">
+          <i class="fa fa-facebook"></i>
+        </li>
+        <li class="list-unstyled">
+          <i class="fa fa-instagram"></i>
+        </li>
+        <li class="list-unstyled">
+          <i class="fa fa-whatsapp"></i>
+        </li>
+      </div>
+    </div>
+  </div>
+  <p class="text-center copyright text-muted"><%= link_to "Revakhand Today", root_path %> All Rights Reserved &copy; <%= Time.now.year %></p>
+  <p class="text-center developers text-muted">Made with <i class="fa fa-coffee"></i> &amp; <i class="fa fa-heart"></i> By <%= link_to "CodeKrieg", "http://codekrieg.com" %> - A RoR Development Company</p>
+</footer>
+

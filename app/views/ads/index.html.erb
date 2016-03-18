@@ -1,25 +1,19 @@
+<%= require "paperclip-dropbox"
 <% @ads.each do |ad| %>
- <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div class="Ad-title">
-          <%= link_to ad.title, ad_path(ad) %>
-        </div>
-        <div class="ad-url">
-          <%=link_to ad.url.html_safe %>
-        </div>
-        <div class="ad-html">
-          <%=raw ad.html %>
-        </div>
+    <div class="container">
+      <div class="row">
+       <div class="col-xs-4">
+        <h4 align="center"><%= link_to ad.title, ad_path(ad) %></h4>
         <div class="ck-time badge"><%= ad.created_at.strftime("%A, %dth-%b-%Y, %H:%M %P, %Z ") %></div>
-        
-      <% if admin_signed_in? %>
-          <div class="ad-actions">
-            <%= link_to "Edit this ad", edit_ad_path(ad), class: "btn btn-xs btn-primary" %>
-            <%= link_to "Delete this ad", ad_path(ad), method: :delete, 
-                                          data: { confirm: "Are you sure you want to delete the ad?"}, 
-                                          class: "btn btn-xs btn-danger" %>  
-          </div>
-        <% end %>
-      </div>
-    </div>
+        <hr>
+        <%= image_tag ad.image.url(:featured), class:"img-responsive" %>
+        <p><%=link_to ad.url.html_safe %></p>
+        <%=raw ad.html %>
+        <div class="ad-actions">
+                <%= link_to "Edit this ad", edit_ad_path(ad), class: "btn btn-xs btn-primary" %>
+                <%= link_to "Delete this ad", ad_path(ad), method: :delete, 
+                                              data: { confirm: "Are you sure you want to delete the ad?"}, 
+                                              class: "btn btn-xs btn-danger" %>  
+        </div>
+   </div>
 <% end %>    

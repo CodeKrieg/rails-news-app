@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'admin-panel', to: "admin_panel#index"
   get 'list-users', to: "admin_panel#list_users"
   get 'add-article', to: "admin_panel#add_article"
-  
+  get 'about', to: 'pages#about'
+  get 'contact', to: "pages#contact"
   # Add resources bellow
   resources :users
   resources :articles
