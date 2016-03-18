@@ -4,10 +4,15 @@ class Article < ActiveRecord::Base
   has_many :article_categories
   has_many :categories, through: :article_categories
   belongs_to :user
-  has_attached_file :featured, styles: { featured:"1024x768#", medium: "300x300#", thumb: "100x100#" }, default_url: "/images/:style/missing.png",
-  dropbox_options: {
-     environment: ENV["RACK_ENV"],
-     path: proc{|style| "#{style}/#{id}_#{avatar.original_filename}"}
-   }
+  # attr_accessor :featured
+  has_attached_file :featured,
+  storage: :dropbox,
+  dropbox_credentials: Rails.root.join("config/dropbox.yml"),
+  styles: {featured:"1024x768#", medium: "300x300#", thumb: "100x100#"},    
+  dropbox_options: {      
+  path: proc{|style| "#{style}/#{id}_#{featured.original_filename}"},  
+  unique_filename: true  
+  }
   validates_attachment_content_type :featured, content_type: /\Aimage\/.*\Z/
+  
 end
