@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317160425) do
+ActiveRecord::Schema.define(version: 20160318091003) do
 
   create_table "ads", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20160317160425) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "html"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "article_categories", force: :cascade do |t|
@@ -31,9 +35,13 @@ ActiveRecord::Schema.define(version: 20160317160425) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "user_id"
+    t.string   "featured_file_name"
+    t.string   "featured_content_type"
+    t.integer  "featured_file_size"
+    t.datetime "featured_updated_at"
   end
 
   create_table "categories", force: :cascade do |t|

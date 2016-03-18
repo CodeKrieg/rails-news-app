@@ -8,3 +8,11 @@
   .badge{
     background-color: #ED1B24;
   }
+  .navbar {
+    background-color: #FFFFFF;
+  }
+  @media (min-width : 480px) {
+  .navbar {height:10em;}
+   .navbar-right{margin-top: 3.53% !important;}
+   .navbar-brand{margin-top: -0.5em;}
+  }

@@ -9,16 +9,15 @@ gem 'sass-rails', '~> 5.0'
 
 # Bootstrap
 gem 'twitter-bootstrap-rails'
-gem 'devise-bootstrap-views'
 
 # Authentication
 gem 'bcrypt', '~> 3.1.7'
-gem 'cancancan'
-
+gem 'cancan'
 
 # Paperclip
 gem 'paperclip', '~> 4.3', '>= 4.3.5'
-
+# Paperclip Dropbox Module
+gem 'paperclip-dropbox'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

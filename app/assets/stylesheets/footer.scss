@@ -1,0 +1,42 @@
+.big-footer {
+  background-color : #0C090A;
+  width: 100%;
+  border-top: 1px dotted #808080;
+  .sub-footer{
+    padding-top: 2em;
+  }
+  .developers{
+    font-size: 0.8em;
+    .fa{
+      color: #ED1B24;
+    }
+  }
+    *{
+       color : #fff; 
+       font-weight: 600;
+       letter-spacing: 0.10em;
+    }
+    
+    .footer-section-titles  {
+      border-bottom: 3px solid #ED1B24;
+      text-align: center;
+    }
+ 
+    .row{
+      padding-bottom: 2em;
+    }
+    
+    a{
+      text-decoration: none;
+      color: #ED1B24;
+      border-bottom: 1px solid #fff;
+    }
+    .copyright{
+      padding-top: 2em;
+      bottom: 0;
+      border-top: 1px solid #808080;
+      // vertical-align: baseline;
+      color: #808080;
+      padding-bottom: none;
+    }
+}
