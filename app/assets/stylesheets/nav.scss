@@ -5,3 +5,18 @@ $red-color: #ED1B24;
 $black-color: #424242;
 
 
+.subnav{
+  height: 4em;
+  background-color: #FEFFFF;
+  margin-top: 3.8em;
+  padding-top: 10px;
+    a{
+      padding-left: 10px;
+      text-decoration: none;
+      color: #777;
+      text-transform: uppercase;
+      &:hover{
+        color: #ED1B24;
+      }
+    }
+}

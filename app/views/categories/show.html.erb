@@ -1,7 +1,41 @@
-<h1 align="center"><%= "Category: " + @category.name %></h1>
-<div align="center">
-    <div class="row">
-      <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+<div class="container-fluid">
+  <% if can? :all, @category %>
+    <div align="center">
+        <div class="row">
+          <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+        </div>
     </div>
+  <% end %>
+  <section class="news-articles padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <% @category_articles.in_groups_of(3, false).each do |art|%>
+          <div class= "main col-xs-4">
+            <% art.each do |article| %>
+              <div class="container-fluid container-white-color padding-top">
+                <div id="box">
+                  <%= image_tag article.featured.url(:medium), class: "img-responsive" %>
+                  <div id="overlay">
+                    <div id="caption">
+                      <%= link_to truncate(article.title, length: 25), article_path(article)%>
+                    </div>
+                  </div>    
+                </div>
+              </div>
+              <div class="container-fluid container-white-color">
+                <p><%= article.created_at.strftime("%B %d, %Y") %></p>
+                <p><%= truncate(article.description, length: 50) %></p>
+                <%= link_to "Read More", article_path(article) %>
+              </div>
+              <br>
+            <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </section>
+
 </div>
-<%= render 'articles/article', obj: @category_articles %>
+
+
+

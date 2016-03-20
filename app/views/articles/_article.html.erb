@@ -1,38 +1,20 @@
 <% obj.each do |article| %>
-<div class="container">
-  <div class="row">
-   
-   <div class="col-xs-4">
-    <h4 align="center"><%= article.title %></h4>
-    <hr>
-    <%= image_tag article.featured.url(:medium), class: "img-responsive" %>
-    <p><%= truncate(article.description, length: 100) %></p>
-    <%= link_to "Read More", article_path(article) %>
-    <% if article.categories.any? %>
-          <p>Categories: <%= render article.categories  %></p>
-        <% end %>
-   </div>
-   
-<!--   <div class="col-xs-4">-->
-<!--    <h3 align="center">A slighter longer title</h3>-->
-<!--    <hr>-->
-<!--    <img class="img-responsive" src="http://placehold.it/700x400" alt="">-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, -->
-<!--    impedit, sit asperiores blanditiis quae molestias quaerat at cumque alias -->
-<!--    suscipit quidem quia voluptas aut quisquam veritatis nesciunt voluptatum itaque quibusdam!</p>-->
-<!--    <a href="#">Read more</a>-->
-<!--   </div>-->
-   
-<!--   <div class="col-xs-4">-->
-<!--    <h3 align="center">This is a very long title</h3>-->
-<!--    <hr>-->
-<!--    <img class="img-responsive" src="http://placehold.it/700x400" alt="">-->
-<!--    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, -->
-<!--    impedit, sit asperiores blanditiis quae molestias quaerat at cumque alias -->
-<!--    suscipit quidem quia voluptas aut quisquam veritatis nesciunt voluptatum itaque quibusdam!</p>-->
-<!--    <a href="#">Read more</a>-->
-<!--   </div>-->
-  
-  </div>
-</div>
+  <section class="news">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="panel panel-info">
+            <%= image_tag article.featured.url(:medium), class: "img-responsive" %>
+            <div class="panel-body">
+              <h4><%= truncate(article.title, length: 25) %></h4>
+              <p><%= article.created_at.strftime("%B %d, %Y") %></p>
+              <p><%= truncate(article.description, length: 100) %></p>
+              <%= link_to "Read More", article_path(article) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <% end %>
+

@@ -16,4 +16,7 @@
 
 //= require turbolinks
 //= require_tree .
+
 $('#formModal').modal('show')
+
+

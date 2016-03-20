@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
   has_attached_file :featured,
   storage: :dropbox,
   dropbox_credentials: Rails.root.join("config/dropbox.yml"),
-  styles: {featured:"1024x768#", medium: "300x300#", thumb: "100x100#"},    
+  styles: {full: "1366x768" ,featured:"1024x768#", medium: "300x300#", thumb: "100x100#"},    
   dropbox_options: {      
   path: proc{|style| "#{style}/#{id}_#{featured.original_filename}"},  
   unique_filename: true  
