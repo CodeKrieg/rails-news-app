@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
-load_and_authorize_resource
-
+  load_and_authorize_resource
+  before_action :category
+  
   def index
-    @category = Category.all
+    @ad = Ad.all.order("created_at desc").limit(3)
   end
   
   def new
@@ -36,6 +37,7 @@ load_and_authorize_resource
   def show
     @category = Category.find(params[:id])
     @category_articles = @category.articles
+    @ad = Ad.all.order("created_at desc").limit(3)
   end
   
   def destroy

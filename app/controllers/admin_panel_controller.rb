@@ -1,7 +1,9 @@
 class AdminPanelController < ApplicationController
-  # before_filter :authenticate_admin!
+  
+  before_action :category
   
   def index
+    
   end
   
   def list_users

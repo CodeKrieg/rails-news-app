@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :category
   
   def about
   end

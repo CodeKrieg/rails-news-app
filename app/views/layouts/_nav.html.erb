@@ -27,4 +27,16 @@
         </ul>
       </div>
     </div>
+    <div class="container-fluid">
+    <div class="navbar subnav" role="navigation">
+      <div class="navbar-inner">
+        	<li class= "list-unstyled">
+        	  <% @categories.each do |category| %>
+        	    <%= link_to "#{category.name}", category_path(category) %>
+        	  <% end %>
+        	</li>
+      </div>
+    </div>
   </div>
+  </div>
+  

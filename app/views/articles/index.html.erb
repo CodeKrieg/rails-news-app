@@ -1,1 +1,37 @@
-<%= render 'article', obj: @article %>
+<div class="container-fluid">
+
+  
+<section class="news-articles padding-top">
+  <div class="container">
+    <div class="row">
+      <% @article.in_groups_of(4, false).each do |group|%>
+        <div class= "main col-xs-3 padding-top">
+          <% group.each do |article| %>
+            <div class="container-fluid container-white-color padding-top">
+              <div class="overlay">
+                <%= image_tag article.featured.url(:featured), class: "img-responsive" %>
+                <div class="caption">
+                  <%= link_to truncate(article.title, length: 25), article_path(article)%>
+                </div>
+              </div>
+            </div>
+            <div class="container-fluid container-white-color">
+              
+              <p><%= article.created_at.strftime("%B %d, %Y") %></p>
+              <p><%= truncate(article.description, length: 50) %></p>
+              <%= link_to "Read More", article_path(article) %>
+            </div>
+            <br>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="sidebar col-xs-3">
+        <%= render 'layouts/ads' %>
+      </div>
+    </div>
+  </div>
+</section>
+  
+  
+</div>
+

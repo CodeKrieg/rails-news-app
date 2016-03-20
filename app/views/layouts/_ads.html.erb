@@ -1,0 +1,7 @@
+<p class="titelize text-right">Advertisements</p>
+<% @ad.in_groups_of(2, false).each do |ad| %> 
+  <% ad.each do |ads| %>
+    <%= link_to "#{image_tag (ads.image.url(:medium))}".html_safe, ads.url, class: "img-responsive advertisement" %>
+    <br>
+  <% end %>
+<% end %>

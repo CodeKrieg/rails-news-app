@@ -1,3 +1,23 @@
 // Place all the styles related to the admin-panel controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ck-admin-brand {
+  padding-top:3.2em !important;
+}
+
+
+.ck-controls{
+  a{
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+      text-decoration: none;    
+      color: #fff;
+    }
+  }
+  .ck-buttons-group{
+    .btn {
+      letter-spacing: 1em;
+    }
+  }
+}

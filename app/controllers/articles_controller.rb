@@ -1,9 +1,12 @@
 class ArticlesController < ApplicationController
   load_and_authorize_resource
   before_action :find_article, only: [:show, :edit, :update, :destroy]
+  before_action :category
+
   
   def index
     @article = Article.all.order("created_at desc")
+    @ad = Ad.all.order("created_at desc").limit(3)
   end
   
   def new
@@ -21,6 +24,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
+    @ad = Ad.all.order("created_at desc").limit(3)
   end
   
   def edit

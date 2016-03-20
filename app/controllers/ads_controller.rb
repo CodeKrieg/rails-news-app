@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
   load_and_authorize_resource
   before_action :find_ad, only: [:show, :edit, :update, :destroy]
-  
+  before_action :category
   def index
     @ad = Ad.all.order("created_at desc")
   end
