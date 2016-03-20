@@ -5,3 +5,11 @@ development:
   access_token_secret: "qeaefb7rkcirbzb"
   user_id: "85108888"
   access_type: "dropbox"
+  
+production:
+  app_key: "m7zictcg93i799b"
+  app_secret: "l0wdhln9et9i9fb"
+  access_token: "f9vxd6scv43wuy7f"
+  access_token_secret: "qeaefb7rkcirbzb"
+  user_id: "85108888"
+  access_type: "dropbox"
