@@ -7,7 +7,7 @@
             <% art.each do |article| %>
               <div class="container-fluid container-white-color padding-top">
                 <div id="box">
-                  <%= image_tag article.featured.url(:medium), class: "img-responsive" %>
+                  <%= image_tag article.featured.url(:thumb), class: "img-responsive" %>
                   <div id="overlay">
                     <div id="caption">
                       <%= link_to truncate(article.title, length: 25), article_path(article)%>

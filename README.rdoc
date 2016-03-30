@@ -17,23 +17,12 @@ should be able to:
 
 == NEWS Features
 
-should have: 
-* News will have images, categories, videos(if user wants but option shall be there)
+Has: 
+* News will have images, categories
 * Title, Featured Image, News content
-* Shareable plugin (I will use a javascript thing to share on different social networks even whatsapp :P)
 
-== VIDEOS Features
-
-simply video box with title, however we have to give 3 sections, 
-* National News(big video on main page) 
-* State News (side bar small video) 
-* City News(below the state news)
 
 == ADVERTISEMENT Features
 Ads can be: 
-* videos or image files only small(as on his website)
-
-== Last will be : 
-
-He needs an image gallery. (need it to be added to administration panel)
+* image files
 	
